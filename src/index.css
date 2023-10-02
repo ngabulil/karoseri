@@ -1,0 +1,13 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+* {
+    font-family: 'Poppins', sans-serif;
+}
+
+.swiper-wrap .swiper {
+    overflow: visible;
+    overflow-x: clip;
+    height: 280px;
+}

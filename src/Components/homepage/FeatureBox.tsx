@@ -1,0 +1,27 @@
+import React from 'react'
+
+interface FeatureBoxProp {
+    bgImg: string,
+    img: string,
+    title: string,
+    text: string,
+    even: boolean,
+}
+
+const FeatureBox: React.FC<FeatureBoxProp> = ({bgImg, img, title, text, even}) => {
+  return (
+    <div className={`${even ? "mt-4" : "mb-4"} p-4 border-2 border-solid max-w-[250px] rounded-2xl bg-white`}>
+        <div className={`${bgImg} p-3 w-fit rounded-md mb-4`}>
+            <img className='' src={img} alt="feture" />
+        </div>
+        <div className='mb-1'>
+            <p className='font-bold text-2xl'>{title}</p>
+        </div>
+        <div>
+            {text}
+        </div>
+    </div>
+  )
+}
+
+export default FeatureBox
