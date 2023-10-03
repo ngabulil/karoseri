@@ -15,9 +15,9 @@ const FeatureBox: React.FC<FeatureBoxProp> = ({bgImg, img, title, text, even}) =
             <img className='' src={img} alt="feture" />
         </div>
         <div className='mb-1'>
-            <p className='font-bold text-2xl'>{title}</p>
+            <p className='font-bold text-2xl text-slate-800'>{title}</p>
         </div>
-        <div>
+        <div className='text-slate-600'>
             {text}
         </div>
     </div>

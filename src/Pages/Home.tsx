@@ -1,5 +1,3 @@
-import React from "react";
-import headerImg from "../assets/industri-karoseri.jpg";
 import logo from "../assets/logo.png";
 import ClientImage from "../Components/homepage/ClientImage";
 import ButtonPrimary from "../Components/button/ButtonPrimary";
@@ -18,6 +16,7 @@ import faqIcon from "../assets/faq-icon.svg"
 import WAme from "../assets/wa.png"
 import phone from "../assets/phone.png"
 import email from "../assets/email.png"
+import setCar from "../assets/517.jpg"
 
 const Home = () => {
   const testimoniData = arrReduce(dataTesti);
@@ -42,13 +41,13 @@ const Home = () => {
   return (
     <div>
       <header>
-        <div className="bg-slate-100">
+        <div className="bg-slate-200">
           <div className="flex justify-between items-center px-12 pt-5 pb-8">
             <div className="flex flex-col justify-center gap-y-5 w-2/5">
               <p className="text-3xl font-bold">
                 Awesome Digital Agency With Cool Style
               </p>
-              <p className="text-sm text-justify">
+              <p className="text-sm text-justify text-slate-700">
                 Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
                 consectetur explicabo atque, incidunt, at, iusto quae iure animi
                 dolore impedit vero ipsum voluptatem amet nostrum laboriosam
@@ -60,7 +59,7 @@ const Home = () => {
               </div>
             </div>
             <div className="flex justify-center w-1/2">
-              <img className="h-96" src={headerImg} alt="" />
+              <img className="h-96" src={setCar} alt="" />
             </div>
           </div>
         </div>
@@ -69,7 +68,7 @@ const Home = () => {
         <div>
           <div className="py-14 flex flex-col bg-s">
             <p className="font-bold text-2xl text-center mb-4">Client Kami</p>
-            <p className="w-80 text text-center m-auto mb-8">
+            <p className="w-80 text text-center m-auto mb-8 text-slate-700">
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
               officiis sequi cumque nemo libero ratione temporibus maiores nulla
             </p>
@@ -82,13 +81,13 @@ const Home = () => {
               <ClientImage link={logo} />
             </div>
           </div>
-          <div className="flex bg-slate-100 justify-between py-16 px-12">
+          <div className="flex bg-slate-200 justify-between py-16 px-12">
             <div className="w-1/2 flex items-center">
               <div>
                 <p className="font-bold text-4xl text-[#303030] pb-2">
                   Kami Menawarkan
                 </p>
-                <p className="pb-5">
+                <p className="pb-5 text-slate-600">
                   Lorem ipsum dolor sit amet consectetur adipisicing elit.
                   Beatae architecto aliquam deleniti aliquid sint ullam quia
                   maxime, dolore itaque obcaecati accusamus non in optio
@@ -150,7 +149,7 @@ const Home = () => {
               />
             </div>
           </div>
-          <div className="bg-slate-100 py-10 px-12">
+          <div className="bg-slate-200 py-10 px-12">
             <div>
               <div className="text-center">
                 <p className="text-xl">Testimoni</p>
