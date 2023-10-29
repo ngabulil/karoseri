@@ -22,9 +22,9 @@ const Footer = () => {
   return (
     <footer>
       <div className="px-12 py-10 bg-slate-200 sm:px-4">
-        <div className="flex gap-x-12 justify-center sm:flex-col sm:gap-y-12 md:grid md:grid-cols-2">
+        <div className="flex gap-x-12 justify-between sm:flex-col sm:gap-y-12 md:grid md:grid-cols-2">
           <LogoWrap />
-          <div className="grid xsml:grid-cols-2 gap-y-6 md:grid md:grid-cols-2">
+          <div className="grid gap-y-6 grid-cols-2 gap-x-20 md:gap-x-0">
             <FooterList data={homeFooter} />
             <FooterList data={perushaanFooter} />
             <FooterList data={productFooter} />
