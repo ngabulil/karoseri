@@ -8,7 +8,7 @@ const LottieFooter = () => {
         animationData: animationData,
       };
   return (
-    <div>
+    <div className='md:absolute md:top-[-150px]'>
       <Lottie options={defaultOptions} height={200} width={200} />
     </div>
   );

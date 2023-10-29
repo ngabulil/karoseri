@@ -10,7 +10,7 @@ const LogoWrap = () => {
   return (
     <div className="flex flex-col gap-y-6 text-justify">
       <Logo />
-      <p className="max-w-[300px] text-xs text-slate-700">
+      <p className="max-w-[300px] text-xs text-slate-700 sm:max-w-none md:max-w-[460px]">
         Lorem ipsum, dolor sit amet consectetur adipisicing elit. Doloribus,
         illo inventore! Odit, laborum dolores ratione repellendus incidunt non
         iure mollitia voluptate labore aut accusantium minima suscipit saepe

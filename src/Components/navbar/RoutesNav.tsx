@@ -2,7 +2,7 @@ import { NavLink } from "react-router-dom";
 
 const RoutesNav = () => {
   return (
-    <div>
+    <div className="sm:hidden">
       <ul className="flex text-sm text-slate-700 gap-x-2">
         <NavLink
           to="/"

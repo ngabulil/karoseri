@@ -16,17 +16,18 @@ const Faqs: React.FC<faqsProps> = ({ data }) => {
   };
   return (
     <div
-      className={`p-8 border-2 border-slate-400 rounded-3xl ${
+      className={`flex flex-col p-8 border-2 border-slate-400 rounded-3xl overflow-hidden sm:py-5 ${
         isClick ? "h-auto" : "h-[90px]"
-      } overflow-hidden`}
+      }`}
+      onClick={handleClick}
     >
-      <div className="flex items-center pb-6 justify-between">
+      <div className="flex items-center pb-6 justify-between sm:pb-0 sm:my-auto">
         <p className="font-bold text-xl">{data.question}</p>
-        <div className="h-7 w-7 flex items-center" onClick={handleClick}>{
-            !isClick ? <AiOutlineRight /> : <AiOutlineDown />
-        }</div>
+        <div className="h-7 w-7 flex items-center">
+          {!isClick ? <AiOutlineRight /> : <AiOutlineDown />}
+        </div>
       </div>
-      <div>
+      <div className={`${!isClick && 'hidden'}`}>
         <p className="text-slate-500">{data.answer}</p>
       </div>
     </div>
