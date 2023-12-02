@@ -1,3 +1,5 @@
 export interface buttonProp {
-    title: string
+    title: string,
+    click?: () => void,
+    moreStyle?: string,
 }

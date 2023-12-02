@@ -1,0 +1,74 @@
+[
+    {
+        "id": 1,
+        "price": 15000,
+        "isPopular": true, 
+        "short": "lorem ipsum test test test test test lorem",
+        "name": "bis",
+        "type": "bus",
+        "img": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996"
+    },
+    {
+        "id": 2,
+        "price": 15000,
+        "isPopular": true, 
+        "short": "lorem ipsum test test test test test lorem",
+        "name": "ambulance",
+        "type": "rescue",
+        "img": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996"
+    },
+    {
+        "id": 3,
+        "price": 15000,
+        "isPopular": true, 
+        "short": "lorem ipsum test test test test test lorem",
+        "name": "mobil van",
+        "type": "van",
+        "img": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996"
+    },
+    {
+        "id": 4,
+        "price": 15000,
+        "isPopular": true, 
+        "short": "lorem ipsum test test test test test lorem",
+        "name": "truk sampah",
+        "type": "truk",
+        "img": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996"
+    },
+    {
+        "id": 5,
+        "price": 15000,
+        "isPopular": false, 
+        "short": "lorem ipsum test test test test test lorem",
+        "name": "truk sampah",
+        "type": "truk",
+        "img": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996"
+    },
+    {
+        "id": 6,
+        "price": 15000,
+        "isPopular": false, 
+        "short": "lorem ipsum test test test test test lorem",
+        "name": "truk sampah",
+        "type": "truk",
+        "img": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996"
+    },
+    {
+        "id": 7,
+        "price": 15000,
+        "isPopular": false, 
+        "short": "lorem ipsum test test test test test lorem",
+        "name": "truk sampah",
+        "type": "truk",
+        "img": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996"
+    },
+    {
+        "id": 8,
+        "price": 15000,
+        "isPopular": false, 
+        "short": "lorem ipsum test test test test test lorem",
+        "name": "truk sampah",
+        "type": "truk",
+        "img": "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996"
+    }
+]

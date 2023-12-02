@@ -95,7 +95,7 @@ const Home = () => {
               <ClientImage link={logo} />
             </div>
           </div>
-          <div className="flex bg-slate-200 justify-between py-16 px-12 sm:px-4 md:gap-x-4">
+          <div className="flex bg-slate-200 justify-between py-16 px-12 sm:px-4 md:gap-x-6">
             <div className="w-1/2 flex items-center sm:w-full">
               <div>
                 <p className="font-bold text-4xl text-[#303030] pb-2 sm:pb-4 md:pb-4">
@@ -140,35 +140,37 @@ const Home = () => {
                 <ButtonPrimary title="asdasd" />
               </div>
             </div>
-            <div className="w-1/2 flex flex-wrap gap-x-4 justify-end sm:hidden md:grid md:grid-cols-2 md:gap-2">
-              <FeatureBox
-                bgImg="bg-red-500"
-                img={imgFeature}
-                text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
-                title="lorem"
-                even={false}
-              />
-              <FeatureBox
-                bgImg="bg-red-500"
-                img={imgFeature}
-                text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
-                title="lorem"
-                even={true}
-              />
-              <FeatureBox
-                bgImg="bg-red-500"
-                img={imgFeature}
-                text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
-                title="lorem"
-                even={false}
-              />
-              <FeatureBox
-                bgImg="bg-red-500"
-                img={imgFeature}
-                text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
-                title="lorem"
-                even={true}
-              />
+            <div className="flex w-1/2 justify-end sm:hidden">
+              <div className="max-w-[759px] flex flex-wrap gap-x-4 justify-end sm:hidden md:grid md:grid-cols-2 md:gap-2">
+                <FeatureBox
+                  bgImg="bg-red-500"
+                  img={imgFeature}
+                  text="gigig gemingkajshdkajsdh"
+                  title="lorem"
+                  even={false}
+                />
+                <FeatureBox
+                  bgImg="bg-red-500"
+                  img={imgFeature}
+                  text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
+                  title="lorem"
+                  even={true}
+                />
+                <FeatureBox
+                  bgImg="bg-red-500"
+                  img={imgFeature}
+                  text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
+                  title="lorem"
+                  even={false}
+                />
+                <FeatureBox
+                  bgImg="bg-red-500"
+                  img={imgFeature}
+                  text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
+                  title="lorem"
+                  even={true}
+                />
+              </div>
             </div>
           </div>
           <div className="py-16 px-12 sm:px-4">
@@ -217,11 +219,13 @@ const Home = () => {
                   modules={[Autoplay, Pagination, Navigation]}
                   className="mySwiper"
                 >
-                  {(mdDevice > 1200 ? testimoniData : testiDataMobile).map((item) => (
+                  {(mdDevice > 1200 ? testimoniData : testiDataMobile).map(
+                    (item) => (
                       <SwiperSlide>
                         <TestimonialWrapper data={item} />
                       </SwiperSlide>
-                    ))}
+                    )
+                  )}
                 </Swiper>
               </div>
             </div>
