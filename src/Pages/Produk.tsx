@@ -1,4 +1,3 @@
-import React from 'react'
 import HeaderWrap from '../Components/produk/HeaderWrap'
 import Content from '../Components/produk/Content'
 
