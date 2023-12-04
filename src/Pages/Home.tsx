@@ -137,7 +137,6 @@ const Home = () => {
                   maxime, dolore itaque obcaecati accusamus non in optio
                   possimus inventore nulla dolorem vitae minus?
                 </p>
-                <ButtonPrimary title="asdasd" />
               </div>
             </div>
             <div className="flex w-1/2 justify-end sm:hidden">

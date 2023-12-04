@@ -6,16 +6,16 @@
     font-family: 'Poppins', sans-serif;
 }
 
-body::-webkit-scrollbar {
+*::-webkit-scrollbar {
     width: 8px;
     height: 8px;
 }
 
-body::-webkit-scrollbar-track {
+*::-webkit-scrollbar-track {
     background: white;
 }
 
-body::-webkit-scrollbar-thumb {
+*::-webkit-scrollbar-thumb {
     background: #0EA5E9;
     border-radius: 14px;
 }

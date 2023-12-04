@@ -36,7 +36,7 @@ const ListProduct: React.FC<ListProps> = ({ data, label, title, isFilter }) => {
         <div className="flex justify-center">
           <div className="max-w-[400px] text-center">
             <div>
-              <p className="text-2xl capitalize font-bold">{title}</p>
+              <p className="text-2xl capitalize font-bold sm:text-3xl sm:underline">{title}</p>
             </div>
             <div className="py-4">
               <p>{label}</p>
@@ -44,8 +44,8 @@ const ListProduct: React.FC<ListProps> = ({ data, label, title, isFilter }) => {
           </div>
         </div>
         {isFilter && (
-          <div>
-            <div className="grid grid-cols-5 mx-auto w-fit p-6 text-center text-lg">
+          <div className="flex">
+            <div className="grid grid-cols-5 mx-auto w-fit p-6 text-center text-lg sm:overflow-auto sm:flex sm:px-2 sm:w-auto">
               <div className={`cursor-pointer px-6 py-2 ${activeType === 'semua' && 'text-white font-semibold rounded-lg bg-sky-600'}`}>
                 <button
                   className="capitalize"
@@ -67,7 +67,7 @@ const ListProduct: React.FC<ListProps> = ({ data, label, title, isFilter }) => {
             </div>
           </div>
         )}
-        <div className="grid grid-cols-4 gap-x-6 gap-y-12 py-6">
+        <div className="grid grid-cols-4 gap-x-6 gap-y-12 py-6 sm:grid-cols-1 smDown:grid-cols-2 xmd:grid-cols-4">
           {(isFilter ? filteredData : data)?.map((item) => (
             <ItemProduct data={item} />
           ))}
