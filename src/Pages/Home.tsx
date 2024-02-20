@@ -52,7 +52,7 @@ const Home = () => {
           <div className="flex justify-between items-center px-12 pt-5 pb-8 sm:px-4">
             <div className="flex flex-col justify-center gap-y-5 w-2/5 sm:w-auto">
               <p className="text-4xl font-bold">
-                Awesome Digital Agency With Cool Style
+                Awesomeee Digital Agency With Cool Style
               </p>
               <div className="sm:!flex sm:justify-center sm:flex-wrap sm:w-full hidden">
                 <img
