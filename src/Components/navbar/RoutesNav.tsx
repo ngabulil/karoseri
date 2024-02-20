@@ -9,7 +9,7 @@ const RoutesNav = () => {
           className={({ isActive }) => `cursor-pointer py-2 px-4 hover:bg-sky-500 hover:text-white rounded-2xl ${isActive && "bg-sky-500 text-white"}`
             }
         >
-          Home
+          Homeeee
         </NavLink>
         <NavLink
           to="/produk"
