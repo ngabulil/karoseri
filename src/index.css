@@ -2,6 +2,12 @@
 @tailwind components;
 @tailwind utilities;
 
+@layer components {
+    .wordSpace8 {
+        word-spacing: 8px;
+    }
+}
+
 * {
     font-family: 'Poppins', sans-serif;
 }
@@ -24,4 +30,28 @@
     overflow: visible;
     overflow-x: clip;
     height: 280px;
+}
+
+svg {
+    height: auto;
+    width: auto;
+}
+
+p,
+h1,
+h2 {
+    color: #334155;
+}
+
+.swiper>.swiper-wrapper {
+    transition-timing-function: linear;
+}
+
+.swiper-company {
+    margin: 0 !important;
+}
+
+.swiper-company .swiper-slide {
+    /* width: fit-content; */
+    margin: auto;
 }

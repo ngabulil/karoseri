@@ -11,42 +11,42 @@ interface ProductOverviewProps {
 const ProductOverview : React.FC<ProductOverviewProps> = ({ widthRef }) => {
   const data = [
     {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR49Gd0HkwyMiwHt6K7LnlhOah5SKdiH8A0Iw&usqp=CAU",
+      img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
       title: "lorem jasdhk ashdasd",
       type: "bus",
       price: 15000,
       id:  1,
     },
     {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR49Gd0HkwyMiwHt6K7LnlhOah5SKdiH8A0Iw&usqp=CAU",
+      img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
       title: "lorem jasdhk ashdasd",
       type: "bus",
       price: 15000,
       id:  1,
     },
     {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR49Gd0HkwyMiwHt6K7LnlhOah5SKdiH8A0Iw&usqp=CAU",
+      img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
       title: "lorem jasdhk ashdasd",
       type: "bus",
       price: 15000,
       id:  1,
     },
     {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR49Gd0HkwyMiwHt6K7LnlhOah5SKdiH8A0Iw&usqp=CAU",
+      img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
       title: "lorem jasdhk ashdasd",
       type: "bus",
       price: 15000,
       id:  1,
     },
     {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR49Gd0HkwyMiwHt6K7LnlhOah5SKdiH8A0Iw&usqp=CAU",
+      img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
       title: "lorem jasdhk ashdasd",
       type: "bus",
       price: 15000,
       id:  1,
     },
     {
-      img: "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR49Gd0HkwyMiwHt6K7LnlhOah5SKdiH8A0Iw&usqp=CAU",
+      img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
       title: "lorem jasdhk ashdasd",
       type: "bus",
       price: 15000,

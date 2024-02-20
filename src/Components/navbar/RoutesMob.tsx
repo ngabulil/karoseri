@@ -15,18 +15,18 @@ const RoutesMob = () => {
       </div>
       {open && (
         <div
-          className={`fixed min-h-screen min-w-full left-0 top-0 bg-black bg-opacity-60`}
+          className={`fixed z-[2] min-h-screen min-w-full left-0 top-0 bg-black bg-opacity-60`}
           onClick={handleOpen}
         ></div>
       )}
       <div
-        className={`fixed z-0 bg-slate-400 right-0 top-0 transition-width ease-in-out delay-150 duration-1000 ${
+        className={`fixed z-[3] bg-slate-400 right-0 top-0 transition-width ease-in-out delay-150 duration-1000 ${
           open ? "w-[230px] h-screen" : "w-0 h-screen"
         }`}
       >
         <div className="relative">
           <div
-            className="absolute left-4 top-4 text-red-500 bg-slate-600 p-2 cursor-pointer"
+            className="absolute left-4 top-4 text-red-500 bg-slate-200 p-2 cursor-pointer"
             onClick={handleOpen}
           >
             <ImCross />

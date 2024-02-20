@@ -8,7 +8,7 @@ import FeatureCont from "../Components/homepage/FeatureCont";
 import imgCont from "../assets/feature.jpg";
 import { arrReduce } from "../helper/arrayReduce";
 import dataTesti from "../data/testimoni.json";
-import { Autoplay, Pagination, Navigation } from "swiper/modules";
+import { Autoplay, Pagination } from "swiper/modules";
 import { Swiper, SwiperSlide } from "swiper/react";
 import TestimonialWrapper from "../Components/homepage/TestimonialWrapper";
 import Faqs from "../Components/homepage/Faqs";
@@ -20,7 +20,7 @@ import setCar from "../assets/517.jpg";
 import { arrToArr } from "../helper/arrToArr";
 
 const Home = () => {
-  const mdDevice = window.innerWidth;
+  const screenWidth = window.innerWidth;
   const testiDataMobile = arrToArr(dataTesti) || [];
   const testimoniData = arrReduce(dataTesti) || [];
   const dataFaq = [
@@ -86,7 +86,46 @@ const Home = () => {
               Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
               officiis sequi cumque nemo libero ratione temporibus maiores nulla
             </p>
-            <div className="grid grid-cols-6 px-28 gap-6 sm:grid-cols-1 sm:px-4 xsml:!grid-cols-2 md:px-4 md:grid-cols-3">
+            <Swiper
+              loop
+              autoplay={{ delay: 0, disableOnInteraction: false }}
+              slidesPerView={screenWidth > 600 ? 3 : 2}
+              speed={5000}
+              grabCursor
+              keyboard
+              spaceBetween={30}
+              className="swiper-company min767:!hidden"
+              modules={[Autoplay]}
+            >
+              <SwiperSlide>
+                  <ClientImage link={logo} />
+              </SwiperSlide>
+              <SwiperSlide>
+                  <ClientImage link={logo} />
+              </SwiperSlide>
+              <SwiperSlide>
+                  <ClientImage link={logo} />
+              </SwiperSlide>
+              <SwiperSlide>
+                  <ClientImage link={logo} />
+              </SwiperSlide>
+              <SwiperSlide>
+                  <ClientImage link={logo} />
+              </SwiperSlide>
+              <SwiperSlide>
+                  <ClientImage link={logo} />
+              </SwiperSlide>
+              {/* <SwiperSlide>
+                <ClientImage link={logo} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ClientImage link={logo} />
+              </SwiperSlide>
+              <SwiperSlide>
+                <ClientImage link={logo} />
+              </SwiperSlide> */}
+            </Swiper>
+            <div className="grid grid-cols-6 px-28 gap-6 sm:grid-cols-1 sm:hidden xsml:!grid-cols-2 md:px-4 md:grid-cols-3">
               <ClientImage link={logo} />
               <ClientImage link={logo} />
               <ClientImage link={logo} />
@@ -214,11 +253,10 @@ const Home = () => {
                   pagination={{
                     clickable: true,
                   }}
-                  navigation={true}
-                  modules={[Autoplay, Pagination, Navigation]}
+                  modules={[Autoplay, Pagination]}
                   className="mySwiper"
                 >
-                  {(mdDevice > 1200 ? testimoniData : testiDataMobile).map(
+                  {(screenWidth > 1200 ? testimoniData : testiDataMobile).map(
                     (item) => (
                       <SwiperSlide>
                         <TestimonialWrapper data={item} />

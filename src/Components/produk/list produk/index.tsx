@@ -5,10 +5,10 @@ interface ListProps {
   data: produk[];
   title: string;
   label: string;
-  isFilter: boolean;
+  isFilter?: boolean;
 }
 
-const ListProduct: React.FC<ListProps> = ({ data, label, title, isFilter }) => {
+const ListProduct: React.FC<ListProps> = ({ data, label, title, isFilter = false }) => {
   const [filteredData, setFilteredData] = React.useState<produk[]>([]);
   const filterName: string[] = [];
   const [activeType, setActiveType] = useState('semua')
