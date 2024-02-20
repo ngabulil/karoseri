@@ -64,7 +64,7 @@ const Perusahaan = () => {
             <div className="flex flex-col gap-6">
               <div>
                 <p className="font-bold text-5xl text-white">
-                  The Most Targetted Factory Template For Your Site
+                  The Most Targetted Factory Template For Your Siteeeee
                 </p>
               </div>
               <div>
