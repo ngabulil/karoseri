@@ -1,5 +1,3 @@
-import React from 'react'
-
 const Visi = () => {
     console.log("ini visi")
   return (

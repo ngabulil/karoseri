@@ -1,4 +1,4 @@
-import React, { useState } from "react";
+import { useState } from "react";
 import BoxPreview from "../Components/perusahaan/BoxPreview";
 import { CuacaSvg } from "../assets/svg";
 import ButtonPrimary from "../Components/button/ButtonPrimary";
