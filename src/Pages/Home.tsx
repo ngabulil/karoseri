@@ -18,6 +18,8 @@ import phone from "../assets/phone.png";
 import email from "../assets/email.png";
 import setCar from "../assets/517.jpg";
 import { arrToArr } from "../helper/arrToArr";
+import ReCAPTCHA from "react-google-recaptcha";
+import { useState } from "react";
 
 const Home = () => {
   const screenWidth = window.innerWidth;
@@ -45,6 +47,8 @@ const Home = () => {
         "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptates repellat aspernatur exercitationem delectus saepe adipisci incidunt fugit, tempora a vitae cupiditate. Odio, commodi corporis nisi aut earum delectus voluptatum.",
     },
   ];
+  const [capt, setCapt] = useState("")
+  console.log(capt);
   return (
     <div>
       <header>
@@ -52,8 +56,9 @@ const Home = () => {
           <div className="flex justify-between items-center px-12 pt-5 pb-8 sm:px-4">
             <div className="flex flex-col justify-center gap-y-5 w-2/5 sm:w-auto">
               <p className="text-4xl font-bold">
-                Awesomeiiiii Digital Agency With Cool Style
+                Awesome Digital Agency With Cool Style
               </p>
+              <ReCAPTCHA sitekey="6LfylYopAAAAAN-DDbkjxb_B4TDq5DQoEA_-Rcfm" onChange={(val: any) => setCapt(val)} />
               <div className="sm:!flex sm:justify-center sm:flex-wrap sm:w-full hidden">
                 <img
                   className="min-w-[280px] max-w-[480px] w-full"
@@ -98,22 +103,22 @@ const Home = () => {
               modules={[Autoplay]}
             >
               <SwiperSlide>
-                  <ClientImage link={logo} />
+                <ClientImage link={logo} />
               </SwiperSlide>
               <SwiperSlide>
-                  <ClientImage link={logo} />
+                <ClientImage link={logo} />
               </SwiperSlide>
               <SwiperSlide>
-                  <ClientImage link={logo} />
+                <ClientImage link={logo} />
               </SwiperSlide>
               <SwiperSlide>
-                  <ClientImage link={logo} />
+                <ClientImage link={logo} />
               </SwiperSlide>
               <SwiperSlide>
-                  <ClientImage link={logo} />
+                <ClientImage link={logo} />
               </SwiperSlide>
               <SwiperSlide>
-                  <ClientImage link={logo} />
+                <ClientImage link={logo} />
               </SwiperSlide>
               {/* <SwiperSlide>
                 <ClientImage link={logo} />
