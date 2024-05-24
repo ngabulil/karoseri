@@ -20,8 +20,8 @@ const Footer = () => {
   const contactFooter = ["Hubungi Kami", "WhatsAPP", "Email", "No. Telepon"];
 
   return (
-    <footer>
-      <div className="px-12 py-10 bg-slate-200 sm:px-4">
+    <footer className="bg-slate-200">
+      <div className="mx-auto max-w-8xl px-12 py-10 bg-slate-200 sm:px-4">
         <div className="flex gap-x-12 justify-between sm:flex-col sm:gap-y-12 md:grid md:grid-cols-2">
           <LogoWrap />
           <div className="grid gap-y-6 grid-cols-2 gap-x-20 md:gap-x-0">

@@ -12,13 +12,6 @@ const Content: FC = () => {
   const defLabel =
     "Lorem ipsum dolor sit amet consectetur adipisicing elit. Accusamus neque sint id perspiciatis voluptates, incidunt repellat quae tempora molestiae nostrum. Natus saepe praesentium molestias reiciendis totam, aperiam blanditiis distinctio aliquid?";
   const popularProduct = dataJson.filter((item) => item.isPopular);
-  const ref = useRef<HTMLDivElement>(null);
-  const [widthRef, setWidthRef] = useState<number>();
-  useEffect(() => {
-    if (ref) {
-      setWidthRef(ref.current?.offsetWidth);
-    }
-  }, [ref]);
 
   // const filterRecomend = (data: produk[]) => {
   //   let filtered: produk[] = [];
@@ -35,9 +28,9 @@ const Content: FC = () => {
 
   // const recommendProduct = filterRecomend(dataJson)
   return (
-    <div className="py-10" ref={ref}>
-      <div className="px-12 sm:px-4">
-        <div className="grid grid-cols-4 gap-x-12 pb-8 sm:grid-cols-1 sm:gap-y-8 md:grid-cols-2 md:gap-y-8">
+    <div className="py-10">
+      <div>
+        <div className="grid max-w-8xl mx-auto grid-cols-4 gap-x-12 pb-8 px-12 sm:px-4 sm:grid-cols-1 sm:gap-y-8 md:grid-cols-2 md:gap-y-8">
           <FeatureProduct ImgSvg={SvgBox} label={defLabel} title="lorem 50" />
           <FeatureProduct ImgSvg={SvgBox} label={defLabel} title="lorem 50" />
           <FeatureProduct ImgSvg={SvgBox} label={defLabel} title="lorem 50" />
@@ -50,7 +43,7 @@ const Content: FC = () => {
             title="popular"
             isFilter={false}
           />
-          <ProductOverview widthRef={widthRef} />
+          <ProductOverview />
           {/* <ListProduct data={recommendProduct} label={defLabel} title='rekomendasi' isFilter={false} /> */}
           <ListProduct
             data={dataJson}

@@ -1,33 +1,44 @@
 import React, { useEffect } from "react";
-import { Routes, Route, useNavigate } from "react-router-dom";
+import {
+  createBrowserRouter,
+  RouterProvider,
+} from "react-router-dom";
 import Home from "./Pages/Home";
 import Produk from "./Pages/Produk";
 import DetailProduk from "./Pages/DetailProduk";
 import Perusahaan from "./Pages/Perusahaan";
 import LandingPage from "./Pages/LandingPage/LandingPage";
+import Tentang from "./Pages/Perusahaan/Tentang";
+import Visi from "./Pages/Perusahaan/Visi";
+import Struktur from "./Pages/Perusahaan/Struktur";
+import HubungiKami from "./Pages/HubungiKami";
+
+const routes = [
+  {
+    path: "/",
+    element: <LandingPage />,
+    children: [
+      { index: true, element: <Home /> },
+      {
+        path: "perusahaan",
+        element: <Perusahaan />,
+        children: [
+          { index: true, element: <Tentang /> },
+          { path: "struktur", element: <Struktur /> },
+          { path: "visi-misi", element: <Visi /> },
+        ],
+      },
+      { path: "produk", element: <Produk /> },
+      { path: "produk/detail/:id/:name", element: <DetailProduk /> },
+      { path: "contact", element: <HubungiKami /> },
+    ],
+  },
+];
+
+const router = createBrowserRouter(routes);
 
 const App: React.FC = () => {
-  const navigate = useNavigate();
-  useEffect(() => {
-    const handleScrollToTop = () => {
-      window.scrollTo(0, 0);
-    };
-    handleScrollToTop();
-    window.addEventListener("beforeunload", handleScrollToTop);
-  }, [navigate]);
-
-  return (
-    <div className="max-w-[2000px] mx-auto">
-      <Routes>
-        <Route path="/" element={<LandingPage />}>
-          <Route index element={<Home />} />
-          <Route path="perusahaan" element={<Perusahaan />} />
-          <Route path="produk" element={<Produk />} />
-          <Route path="produk/detail/:id/:name" element={<DetailProduk />} />
-        </Route>
-      </Routes>
-    </div>
-  );
+  return <RouterProvider router={router} />;
 };
 
 export default App;

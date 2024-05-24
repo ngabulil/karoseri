@@ -9,7 +9,7 @@
 }
 
 * {
-    font-family: 'Poppins', sans-serif;
+    font-family: 'Poppins', sans-serif !important;
 }
 
 *::-webkit-scrollbar {
@@ -54,4 +54,13 @@ h2 {
 .swiper-company .swiper-slide {
     /* width: fit-content; */
     margin: auto;
+}
+
+.swiper-about-company .swiper-pagination-bullets {
+    margin-top: 6px;
+    position: unset;
+}
+
+.swiper-detail .swiper-pagination-bullets {
+    position: unset;
 }

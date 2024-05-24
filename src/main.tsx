@@ -5,12 +5,10 @@ import './index.css'
 import "swiper/css";
 import "swiper/css/pagination";
 import "swiper/css/navigation";
-import { BrowserRouter } from 'react-router-dom';
+import 'react-medium-image-zoom/dist/styles.css'
 
 ReactDOM.createRoot(document.getElementById('root')!).render(
   <React.StrictMode>
-    <BrowserRouter>
       <App />
-    </BrowserRouter>
   </React.StrictMode>,
 )

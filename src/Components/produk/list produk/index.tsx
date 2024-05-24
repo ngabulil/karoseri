@@ -31,7 +31,7 @@ const ListProduct: React.FC<ListProps> = ({ data, label, title, isFilter = false
     setFilteredData(data);
   }, [data]);
   return (
-    <div className="py-8">
+    <div className="py-8 max-w-8xl mx-auto px-12 sm:px-4">
       <div>
         <div className="flex justify-center">
           <div className="max-w-[400px] text-center">
@@ -67,7 +67,7 @@ const ListProduct: React.FC<ListProps> = ({ data, label, title, isFilter = false
             </div>
           </div>
         )}
-        <div className="grid grid-cols-4 gap-x-6 gap-y-12 py-6 sm:grid-cols-1 smDown:grid-cols-2 xmd:grid-cols-4">
+        <div className="grid grid-cols-4 gap-12 py-6 sm:grid-cols-1 smDown:grid-cols-2 xmd:grid-cols-4">
           {(isFilter ? filteredData : data)?.map((item) => (
             <ItemProduct data={item} />
           ))}
