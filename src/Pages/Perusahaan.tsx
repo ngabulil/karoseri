@@ -1,18 +1,13 @@
-import { useState } from "react";
 import BoxPreview from "../Components/perusahaan/BoxPreview";
 import { CuacaSvg } from "../assets/svg";
 import ButtonPrimary from "../Components/button/ButtonPrimary";
 import ButtonSecond from "../Components/button/ButtonSecond";
-import Tentang from "./Perusahaan/Tentang";
-import Visi from "./Perusahaan/Visi";
-import MainComponent from "../Components/perusahaan/MainComponent";
-import Struktur from "./Perusahaan/Struktur";
 import { Outlet, useNavigate } from "react-router-dom";
 import useWindowSize from "../hooks/useWindowSize";
 
 const Perusahaan = () => {
   const navigate = useNavigate();
-  const [_, screenHeight] = useWindowSize();
+  const [, screenHeight] = useWindowSize();
   const data = [
     {
       label: "Profil Perusahaan",
@@ -36,21 +31,20 @@ const Perusahaan = () => {
       path: "/perusahaan/struktur"
     },
   ];
-  const dataComponent = [
-    {
-      title: "Tentang Perusahaan",
-      onClick: () => navigate("/perusahaan"),
-    },
-    {
-      title: "Visi dan Misi Perusahaan",
-      onClick: () => navigate("visi-misi"),
-    },
-    {
-      title: "Struktur Perusahaan",
-      onClick: () => navigate("struktur"),
-    }
-  ]
-  console.log(12312)
+  // const dataComponent = [
+  //   {
+  //     title: "Tentang Perusahaan",
+  //     onClick: () => navigate("/perusahaan"),
+  //   },
+  //   {
+  //     title: "Visi dan Misi Perusahaan",
+  //     onClick: () => navigate("visi-misi"),
+  //   },
+  //   {
+  //     title: "Struktur Perusahaan",
+  //     onClick: () => navigate("struktur"),
+  //   }
+  // ]
 
   return (
     <div>

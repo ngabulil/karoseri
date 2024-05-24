@@ -5,7 +5,7 @@ import dataJson from "../../data/produk.json";
 import ListProduct from "./list produk";
 import { ReactComponent as SvgBox } from "../../assets/svg/box.svg";
 import ProductOverview from "./produk overview";
-import { FC, useEffect, useRef, useState } from "react";
+import { FC } from "react";
 
 const Content: FC = () => {
   // const defImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR49Gd0HkwyMiwHt6K7LnlhOah5SKdiH8A0Iw&usqp=CAU";
