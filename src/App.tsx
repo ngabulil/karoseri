@@ -12,6 +12,7 @@ import Tentang from "./Pages/Perusahaan/Tentang";
 import Visi from "./Pages/Perusahaan/Visi";
 import Struktur from "./Pages/Perusahaan/Struktur";
 import HubungiKami from "./Pages/HubungiKami";
+import NotFound from "./Pages/NotFound";
 
 const routes = [
   {
@@ -33,6 +34,7 @@ const routes = [
       { path: "contact", element: <HubungiKami /> },
     ],
   },
+  { path: "*", element: <NotFound /> },
 ];
 
 const router = createBrowserRouter(routes);

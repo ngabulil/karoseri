@@ -26,6 +26,14 @@
     border-radius: 14px;
 }
 
+body {
+    height: 100vh;
+}
+
+#root {
+    height: 100vh;
+}
+
 .swiper-wrap .swiper {
     overflow: visible;
     overflow-x: clip;

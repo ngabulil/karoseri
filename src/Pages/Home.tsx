@@ -23,7 +23,6 @@ const Home = () => {
   const screenWidth = window.innerWidth;
   const testiDataMobile = arrToArr(dataTesti) || [];
   const testimoniData = arrReduce(dataTesti, 2) || [];
-  console.log(testiDataMobile);
   const dataFaq = [
     {
       question: "q1. lorem ipsum nani?",
@@ -279,11 +278,11 @@ const Home = () => {
               </div>
               <div className="bg-sky-600 rounded-[40px] flex justify-center text-center py-10 text-white mt-8">
                 <div className="">
-                  <p className="text-sm pb-4">
+                  <p className="text-sm pb-4 text-white">
                     Jika Terdapat Pertanyaan Lebih Lanjut
                   </p>
-                  <p className="text-4xl font-bold">Silahkan Hubungi Kami</p>
-                  <p className="py-3">
+                  <p className="text-4xl font-bold text-white">Silahkan Hubungi Kami</p>
+                  <p className="pt-3 pb-6 text-white">
                     Kamu dapat menghubungi kami melalui beberapa cara
                   </p>
                   <div className="flex flex-col gap-y-3">
