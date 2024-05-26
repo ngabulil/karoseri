@@ -18,9 +18,10 @@ import phone from "../assets/phone.png";
 import email from "../assets/email.png";
 import setCar from "../assets/517.jpg";
 import { arrToArr } from "../helper/arrToArr";
+import useWindowSize from "../hooks/useWindowSize";
 
 const Home = () => {
-  const screenWidth = window.innerWidth;
+  const screenWidth = useWindowSize()[0];
   const testiDataMobile = arrToArr(dataTesti) || [];
   const testimoniData = arrReduce(dataTesti, 2) || [];
   const dataFaq = [
@@ -276,7 +277,7 @@ const Home = () => {
                   <img src={faqIcon} alt="" />
                 </div>
               </div>
-              <div className="bg-sky-600 rounded-[40px] flex justify-center text-center py-10 text-white mt-8">
+              <div className="bg-sky-600 rounded-[40px] flex justify-center text-center py-10 text-white mt-8 sm:px-6">
                 <div className="">
                   <p className="text-sm pb-4 text-white">
                     Jika Terdapat Pertanyaan Lebih Lanjut
