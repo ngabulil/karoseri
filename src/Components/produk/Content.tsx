@@ -1,7 +1,6 @@
 /* eslint-disable @typescript-eslint/no-unused-vars */
 // import React from 'react'
 import FeatureProduct from "./feature product";
-import dataJson from "../../data/produk.json";
 import ListProduct from "./list produk";
 import { ReactComponent as SvgBox } from "../../assets/svg/box.svg";
 import ProductOverview from "./produk overview";
@@ -9,7 +8,6 @@ import { FC, useEffect } from "react";
 import { UseProductContext } from "../../Context/ProductContext";
 
 const Content: FC = () => {
-  // const defImg = "https://encrypted-tbn0.gstatic.com/images?q=tbn:ANd9GcR49Gd0HkwyMiwHt6K7LnlhOah5SKdiH8A0Iw&usqp=CAU";
   const { products, getAllProducts } = UseProductContext()
   const popularProduct = products.filter((item: any) => item.is_fav);
   const defLabel =

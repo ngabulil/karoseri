@@ -6,7 +6,7 @@ import { IoIosSearch } from "react-icons/io";
 import { Link } from "react-router-dom";
 import { toRupiah } from "../../helper/numberConvert";
 
-let openModal;
+let openModal = () => {};
 
 const ModalProduct = () => {
   const [open, setOpen] = React.useState(false);

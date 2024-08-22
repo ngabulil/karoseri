@@ -1,5 +1,6 @@
 import React from "react";
 import ReactDOM from "react-dom";
+import useWindowSize from "../../hooks/useWindowSize";
 
 interface ZoomImageProps {
   img: string;
@@ -8,6 +9,8 @@ interface ZoomImageProps {
 
 const ZoomImage: React.FC<ZoomImageProps> = ({ img, children }) => {
   const [zoom, setZoom] = React.useState(false);
+  const [windowWidth, windowHeight] = useWindowSize();
+  console.log(windowWidth, windowHeight);
 
   const modalContent = (
     <div
@@ -22,7 +25,7 @@ const ZoomImage: React.FC<ZoomImageProps> = ({ img, children }) => {
           <img src={img} alt="zoom" className="" />
         </div>
       </div> */}
-      <img src={img} className="h-screen" alt="" />
+      <img src={img} className={windowWidth > windowHeight ? "h-screen" : "w-screen"} alt="" />
     </div>
   );
 
