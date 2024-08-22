@@ -1,5 +1,3 @@
-/* eslint-disable @typescript-eslint/no-unused-vars */
-// import React from 'react'
 import FeatureProduct from "./feature product";
 import ListProduct from "./list produk";
 import { ReactComponent as SvgBox } from "../../assets/svg/box.svg";

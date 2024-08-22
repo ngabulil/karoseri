@@ -10,7 +10,6 @@ interface ZoomImageProps {
 const ZoomImage: React.FC<ZoomImageProps> = ({ img, children }) => {
   const [zoom, setZoom] = React.useState(false);
   const [windowWidth, windowHeight] = useWindowSize();
-  console.log(windowWidth, windowHeight);
 
   const modalContent = (
     <div
