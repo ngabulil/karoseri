@@ -2,47 +2,58 @@ import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { toRupiah } from "../helper/numberConvert";
 import ListProduct from "../Components/produk/list produk";
-import dataJson from "../data/produk.json";
-import { useEffect, useRef } from "react";
-import { useNavigate } from "react-router-dom";
+import { useEffect, useRef, useState } from "react";
+import { useNavigate, useParams } from "react-router-dom";
 import Table from "../Components/detail/table/Table";
 import Zoom from "react-medium-image-zoom";
+import { UseDetailContext } from "../Context/DetailContext";
+import { UseProductContext } from "../Context/ProductContext";
+import { FaQuestionCircle } from "react-icons/fa";
+import ModalMessage from "../Components/ModalMessage/ModalMessage";
+import ZoomImage from "../Components/ZoomImage/ZoomImage";
 
 const DetailProduk = () => {
   const ref = useRef<HTMLDivElement>(null);
-  const dataDetail = {
-    name: "Mobil Ambulance X Jaguar Limited Edition",
-    short: "Lore ipsum asdhkuhasd khasjhd kjhaksjdh ashdg asjhdkasd",
-    description: `Lore ipsum asdhkuhasd asdasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh sdadas asdasd Lore ipsum asdhkuhasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh 
-      
-      kahskdjhkajshdjalsdj`,
-    type: "Van",
-    price: 15000000,
-    images: [
-      "https://st4.depositphotos.com/28548270/31222/v/1600/depositphotos_312226896-stock-illustration-car-vector-illustration-black-only.jpg",
-      "https://st4.depositphotos.com/28548270/31222/v/1600/depositphotos_312226896-stock-illustration-car-vector-illustration-black-only.jpg",
-      "https://st4.depositphotos.com/28548270/31222/v/1600/depositphotos_312226896-stock-illustration-car-vector-illustration-black-only.jpg",
-    ],
-  };
-  const navigate = useNavigate();
-  useEffect(() => {
-    const handleScrollToTop = () => {
-      window.scrollTo(0, 0);
-    };
-    handleScrollToTop();
+  const { detail: dataDetail, getDetail, isVisible, setIsVisible } = UseDetailContext();
+  const { recomendedProducts, getRecommededProducts } = UseProductContext();
+  const { id } = useParams<{ id: string }>();
+  // const dataDetail = {
+  //   name: "Mobil Ambulance X Jaguar Limited Edition",
+  //   short: "Lore ipsum asdhkuhasd khasjhd kjhaksjdh ashdg asjhdkasd",
+  //   description: `Lore ipsum asdhkuhasd asdasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh sdadas asdasd Lore ipsum asdhkuhasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh
 
-    window.addEventListener("beforeunload", handleScrollToTop);
+  //     kahskdjhkajshdjalsdj`,
+  //   type: "Van",
+  //   price: 15000000,
+  //   images: [
+  //     "https://st4.depositphotos.com/28548270/31222/v/1600/depositphotos_312226896-stock-illustration-car-vector-illustration-black-only.jpg",
+  //     "https://st4.depositphotos.com/28548270/31222/v/1600/depositphotos_312226896-stock-illustration-car-vector-illustration-black-only.jpg",
+  //     "https://st4.depositphotos.com/28548270/31222/v/1600/depositphotos_312226896-stock-illustration-car-vector-illustration-black-only.jpg",
+  //   ],
+  // };
+  // const navigate = useNavigate();
+  // useEffect(() => {
+  //   const handleScrollToTop = () => {
+  //     window.scrollTo(0, 0);
+  //   };
+  //   handleScrollToTop();
 
-    // return () => {
-    //   window.removeEventListener('beforeunload', handleScrollToTop);
-    // };
-  }, [navigate]);
+  //   window.addEventListener("beforeunload", handleScrollToTop);
+
+  //   // return () => {
+  //   //   window.removeEventListener('beforeunload', handleScrollToTop);
+  //   // };
+  // }, [navigate]);
 
   // useEffect(() => {
   //   if (ref.current) {
   //     ref.current.scrollIntoView({ behavior: "smooth" });
   //   }
   // }, [navigate]);
+  useEffect(() => {
+    getDetail(id);
+    getRecommededProducts();
+  }, [id]);
   return (
     <div className="bg-slate-100 py-4 px-12 sm:px-2" ref={ref}>
       <div className="border-2 p-8 max-w-8xl mx-auto bg-white rounded-xl sm:mx-2 sm:p-4">
@@ -68,15 +79,15 @@ const DetailProduk = () => {
                 modules={[Autoplay, Pagination]}
                 className="mySwiper swiper-detail"
               >
-                {dataDetail.images.map((img) => (
+                {dataDetail.images?.map((img: any) => (
                   <SwiperSlide>
-                    <Zoom>
+                    <ZoomImage img={img}>
                       <img
                         src={img}
                         alt=""
-                        className="w-full max-w-[400px] mx-auto"
+                        className="w-[600px] h-[400px] mx-auto"
                       />
-                    </Zoom>
+                    </ZoomImage>
                   </SwiperSlide>
                 ))}
               </Swiper>
@@ -124,15 +135,24 @@ const DetailProduk = () => {
             <p className="text-2xl font-bold text-center">Tabel Spesifikasi</p>
           </div>
           <div className="w-4/5 mx-auto sm:w-full md:w-[90%]">
-            <Table />
+            <Table dataTable={dataDetail.spec_table} />
           </div>
         </div>
         <ListProduct
-          data={dataJson.slice(0, 4)}
+          data={recomendedProducts}
           label="Jelajahi Pilihan Luar Biasa Kami!"
           title="Produk Lainnya"
         />
       </div>
+      {!isVisible && (
+        <div onClick={() => setIsVisible(true)} className="fixed bottom-4 right-16 z-10 cursor-pointer">
+          <div className="p-4 bg-sky-600 rounded-md font-bold flex gap-2">
+            <p className="text-white">Tanya Produk</p>
+            <FaQuestionCircle className="text-white" />
+          </div>
+        </div>
+      )}
+      <ModalMessage />
     </div>
   );
 };

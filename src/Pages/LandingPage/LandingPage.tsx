@@ -2,6 +2,7 @@ import Navbar from "../../Components/navbar/Navbar";
 import { Outlet, useLocation } from "react-router-dom";
 import Footer from "../../Components/footer/Footer";
 import { useEffect } from "react";
+import ModalProduct from "../../Components/ModalProduct/ModalProduct";
 
 const LandingPage = () => {
   const { pathname } = useLocation();
@@ -15,6 +16,7 @@ const LandingPage = () => {
         <Outlet />
       </main>
       <Footer />
+      <ModalProduct />
     </div>
   );
 };

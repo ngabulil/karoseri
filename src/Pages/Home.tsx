@@ -3,9 +3,7 @@ import ClientImage from "../Components/homepage/ClientImage";
 import ButtonPrimary from "../Components/button/ButtonPrimary";
 import ButtonSecond from "../Components/button/ButtonSecond";
 import FeatureBox from "../Components/homepage/FeatureBox";
-import imgFeature from "../assets/Group1.svg";
 import FeatureCont from "../Components/homepage/FeatureCont";
-import imgCont from "../assets/feature.jpg";
 import { arrReduce } from "../helper/arrayReduce";
 import dataTesti from "../data/testimoni.json";
 import { Autoplay, Pagination } from "swiper/modules";
@@ -19,31 +17,42 @@ import email from "../assets/email.png";
 import setCar from "../assets/517.jpg";
 import { arrToArr } from "../helper/arrToArr";
 import useWindowSize from "../hooks/useWindowSize";
+import {
+  CarsSvg,
+  ContactUsSvg,
+  CustomizedSvg,
+  ExperiencedSvg,
+  PerBusinessSvg,
+  PersonalizedSvg,
+  TrustedSvg,
+} from "../assets/svg";
+import { useNavigate } from "react-router-dom";
 
 const Home = () => {
   const screenWidth = useWindowSize()[0];
   const testiDataMobile = arrToArr(dataTesti) || [];
   const testimoniData = arrReduce(dataTesti, 2) || [];
+  const navigate = useNavigate();
   const dataFaq = [
     {
-      question: "q1. lorem ipsum nani?",
+      question: "Bagaimana cara untuk memesan atau membeli produk ini?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptates repellat aspernatur exercitationem delectus saepe adipisci incidunt fugit, tempora a vitae cupiditate. Odio, commodi corporis nisi aut earum delectus voluptatum.",
+        "Untuk memesan atau membeli produk kami, Anda dapat menghubungi kami melalui beberapa saluran komunikasi yang telah kami sediakan. Kirimkan permintaan atau pertanyaan Anda ke email kami, atau hubungi kami melalui WhatsApp untuk mendapatkan informasi cepat. Anda juga dapat menelepon kami untuk berbicara langsung dengan perwakilan kami. Kami akan siap membantu Anda dengan proses pemesanan dan memastikan Anda mendapatkan solusi karoseri yang tepat sesuai kebutuhan Anda.",
     },
     {
-      question: "q2. lorem ipsum nani?",
+      question: "Bagaimana cara membeli langsung produk melalui website?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptates repellat aspernatur exercitationem delectus saepe adipisci incidunt fugit, tempora a vitae cupiditate. Odio, commodi corporis nisi aut earum delectus voluptatum.",
+        "Untuk saat ini kami belum melayani pemesanan secara langsung melalui website, dan hanya melayani pemesanan melalui WhatsApp. Email, telepon, dan media sosial lainnya. Kami akan siap membantu Anda dengan proses pemesanan dan memastikan Anda mendapatkan solusi karoseri yang tepat sesuai kebutuhan Anda.",
     },
     {
-      question: "q3. lorem ipsum nani?",
+      question: "Apakah ada syarat khusus untuk melakukan pemesanan?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptates repellat aspernatur exercitationem delectus saepe adipisci incidunt fugit, tempora a vitae cupiditate. Odio, commodi corporis nisi aut earum delectus voluptatum.",
+        "Kami tidak memiliki syarat khusus untuk melakukan pemesanan. Namun, pastikan Anda memberikan informasi yang akurat dan lengkap mengenai kebutuhan kustomisasi Anda untuk memastikan hasil yang optimal.",
     },
     {
-      question: "q4. lorem ipsum nani?",
+      question: "Berapa lama waktu yang diperlukan untuk menyelesaikan modifikasi atau kustomisasi?",
       answer:
-        "Lorem ipsum dolor sit amet consectetur adipisicing elit. Pariatur voluptates repellat aspernatur exercitationem delectus saepe adipisci incidunt fugit, tempora a vitae cupiditate. Odio, commodi corporis nisi aut earum delectus voluptatum.",
+        "Waktu penyelesaian tergantung pada kompleksitas proyek dan jenis modifikasi yang Anda pilih. Kami akan memberikan estimasi waktu pengerjaan saat Anda melakukan pemesanan dan memastikan komunikasi yang jelas sepanjang proses.",
     },
   ];
   return (
@@ -52,7 +61,7 @@ const Home = () => {
         <div className="flex max-w-8xl mx-auto justify-between items-center px-12 pt-5 pb-8 sm:px-4">
           <div className="flex flex-col justify-center gap-y-5 w-2/5 sm:w-auto">
             <p className="text-4xl font-bold">
-              Awesomeiiiii Digital Agency With Cool Style
+              Solusi Karoseri Terdepan untuk Modifikasi dan Kustomisasi Mobil
             </p>
             <div className="sm:!flex sm:justify-center sm:flex-wrap sm:w-full hidden">
               <img
@@ -61,15 +70,16 @@ const Home = () => {
                 alt=""
               />
             </div>
-            <p className="text-sm text-justify text-slate-700 sm:text-xl">
-              Lorem ipsum dolor sit amet consectetur adipisicing elit. Alias
-              consectetur explicabo atque, incidunt, at, iusto quae iure animi
-              dolore impedit vero ipsum voluptatem amet nostrum laboriosam
-              tempore rerum ab. Molestias.
+            <p className="text-base text-justify text-slate-700 sm:text-xl">
+              Menghadirkan Inovasi dan Kreativitas dalam Setiap Modifikasi
+              Mobil—Solusi Karoseri Terintegrasi untuk Kebutuhan Kustomisasi
+              Anda Dari Perencanaan Desain hingga Implementasi Akhir, Kami
+              Menyediakan Layanan Kustomisasi Mobil Terbaik dengan Detail yang
+              Teliti dan Profesionalisme Tinggi
             </p>
-            <div className="flex gap-4">
-              <ButtonPrimary title="primary" />
-              <ButtonSecond title="second" />
+            <div className="flex gap-4 sm:flex-wrap">
+              <ButtonPrimary title="Cek Sekarang" click={() => navigate("/produk")} moreStyle="sm:w-full" />
+              <ButtonSecond title="Tentang Kami" click={() => navigate("/perusahaan")} moreStyle="sm:w-full" />
             </div>
           </div>
           <div className="flex justify-center w-1/2 sm:hidden">
@@ -82,8 +92,9 @@ const Home = () => {
           <div className="py-14 max-w-8xl mx-auto flex flex-col sm:px-2">
             <p className="font-bold text-4xl text-center mb-4">Client Kami</p>
             <p className="w-80 text text-center m-auto mb-8 text-slate-700 text-xl sm:w-auto md:w-4/5">
-              Lorem ipsum dolor sit amet, consectetur adipisicing elit. Dolor
-              officiis sequi cumque nemo libero ratione temporibus maiores nulla
+              Perusahaan kami telah banyak bekerja sama dengan beberapa
+              perusahaan dan pemerintahan. Profesionalisme dan komitmen kami
+              terhadap kualitas menjadikan kami mitra terpercaya.
             </p>
             <Swiper
               loop
@@ -131,72 +142,65 @@ const Home = () => {
                   <p className="font-bold text-4xl text-[#303030] pb-2 sm:pb-4 md:pb-4">
                     Kami Menawarkan
                   </p>
-                  <div className="sm:!grid sm:grid-cols-1 xsml:!grid-cols-2 sm:gap-2 hidden">
+                  <div className="hidden sm:!grid sm:grid-cols-2 max540:!grid-cols-1 sm:gap-2 ">
                     <FeatureBox
-                      bgImg="bg-red-500"
-                      img={imgFeature}
-                      text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
-                      title="lorem"
+                      img={PersonalizedSvg}
+                      text="Pilih fitur dan desain yang sesuai kebutuhan Anda untuk pengalaman berkendara yang unik"
+                      title="Personalisasi"
                       even={false}
                     />
                     <FeatureBox
-                      bgImg="bg-red-500"
-                      img={imgFeature}
-                      text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
-                      title="lorem"
+                      img={CustomizedSvg}
+                      text="Ubah mobil Anda sesuai gaya dan keinginan pribadi dengan layanan kustomisasi kami"
+                      title="Kustomisasi"
                       even={true}
                     />
                     <FeatureBox
-                      bgImg="bg-red-500"
-                      img={imgFeature}
-                      text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
-                      title="lorem"
+                      img={ExperiencedSvg}
+                      text="Kami memiliki tim ahli berpengalaman untuk hasil modifikasi yang berkualitas tinggi"
+                      title="Berpengalaman"
                       even={false}
                     />
                     <FeatureBox
-                      bgImg="bg-red-500"
-                      img={imgFeature}
-                      text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
-                      title="lorem"
+                      img={TrustedSvg}
+                      text="Kami dikenal sebagai mitra terpercaya dengan layanan memuaskan dan hasil yang sesuai harapan"
+                      title="Terpercaya"
                       even={true}
                     />
                   </div>
                   <p className="pb-5 text-slate-600 text-justify sm:text-xl sm:pt-4 md:pt-4">
-                    Lorem ipsum dolor sit amet consectetur adipisicing elit.
-                    Beatae architecto aliquam deleniti aliquid sint ullam quia
-                    maxime, dolore itaque obcaecati accusamus non in optio
-                    possimus inventore nulla dolorem vitae minus?
+                    Kami menawarkan solusi karoseri lengkap untuk memenuhi
+                    kebutuhan modifikasi dan kustomisasi mobil Anda, dengan
+                    fokus pada inovasi, kualitas, dan kepuasan pelanggan. Setiap
+                    proyek kami tangani dengan keahlian dan dedikasi untuk hasil
+                    yang memuaskan.
                   </p>
                 </div>
               </div>
               <div className="flex w-1/2 justify-end sm:hidden">
                 <div className="max-w-[759px] flex flex-wrap gap-x-4 justify-end sm:hidden md:grid md:grid-cols-2 md:gap-2">
                   <FeatureBox
-                    bgImg="bg-red-500"
-                    img={imgFeature}
-                    text="gigig gemingkajshdkajsdh"
-                    title="lorem"
+                    img={PersonalizedSvg}
+                    text="Pilih fitur dan desain yang sesuai kebutuhan Anda untuk pengalaman berkendara yang unik"
+                    title="Personalisasi"
                     even={false}
                   />
                   <FeatureBox
-                    bgImg="bg-red-500"
-                    img={imgFeature}
-                    text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
-                    title="lorem"
+                    img={CustomizedSvg}
+                    text="Ubah mobil Anda sesuai gaya dan keinginan pribadi dengan layanan kustomisasi kami"
+                    title="Kustomisasi"
                     even={true}
                   />
                   <FeatureBox
-                    bgImg="bg-red-500"
-                    img={imgFeature}
-                    text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
-                    title="lorem"
+                    img={ExperiencedSvg}
+                    text="Kami memiliki tim ahli berpengalaman untuk hasil modifikasi yang berkualitas tinggi"
+                    title="Berpengalaman"
                     even={false}
                   />
                   <FeatureBox
-                    bgImg="bg-red-500"
-                    img={imgFeature}
-                    text="Lorem asvdj asdjvg asgy ausydg ysd yasdjyygasd asjdg"
-                    title="lorem"
+                    img={TrustedSvg}
+                    text="Kami dikenal sebagai mitra terpercaya dengan layanan memuaskan dan hasil yang sesuai harapan"
+                    title="Terpercaya"
                     even={true}
                   />
                 </div>
@@ -207,21 +211,27 @@ const Home = () => {
             <div className="flex max-w-8xl mx-auto flex-col py-16 px-12 sm:px-4 sm:gap-y-12">
               <FeatureCont
                 even={false}
-                img={imgCont}
-                text="ahsvdjasvhd jhasbdjas ashdgasjgd asjdhgajsd sjhgajsd ahdkhdkajhdkjasdhajsdh dhakjhskjdhkajsdhk jdhkahkasjhdkj dk jhdkjhdkajs hdk jah kjhdkjs hkjash kjhk sjhdakdjh"
-                title="lorem lorem"
+                img={CarsSvg}
+                text="Eksplorasi berbagai pilihan inovatif untuk modifikasi dan kustomisasi mobil Anda. Dari desain eksterior yang mencuri perhatian hingga upgrade performa yang mengesankan, temukan solusi yang sesuai dengan kebutuhan, gaya, dan fungsionalitas kendaraan Anda. Kami menghadirkan perubahan yang tidak hanya memperindah tampilan tetapi juga meningkatkan kegunaan dan efisiensi mobil Anda."
+                title="Halaman Produk"
+                label="Temukan Koleksi Produk Karoseri Terbaik Kami"
+                onClick={() => navigate("/produk")}
               />
               <FeatureCont
                 even
-                img={imgCont}
-                text="ahsvdjasvhd jhasbdjas ashdgasjgd asjdhgajsd sjhgajsd ahdkhdkajhdkjasdhajsdh dhakjhskjdhkajsdhk jdhkahkasjhdkj dk jhdkjhdkajs hdk jah kjhdkjs hkjash kjhk sjhdakdjh"
-                title="lorem lorem"
+                img={PerBusinessSvg}
+                text="Pelajari lebih lanjut tentang perjalanan kami, nilai-nilai yang kami pegang, dan komitmen kami untuk memberikan layanan karoseri yang tidak hanya berkualitas tetapi juga penuh inovasi dan keahlian. Temukan bagaimana visi dan misi kami membentuk setiap proyek yang kami kerjakan, dan mengapa kami menjadi mitra terpercaya dalam dunia modifikasi dan kustomisasi mobil."
+                title="Halaman Perusahaan"
+                label="Mengenal Kami Lebih Dekat: Visi, Misi, dan Tentang Kami"
+                onClick={() => navigate("/perusahaan")}
               />
               <FeatureCont
                 even={false}
-                img={imgCont}
-                text="ahsvdjasvhd jhasbdjas ashdgasjgd asjdhgajsd sjhgajsd ahdkhdkajhdkjasdhajsdh dhakjhskjdhkajsdhk jdhkahkasjhdkj dk jhdkjhdkajs hdk jah kjhdkjs hkjash kjhk sjhdakdjh"
-                title="lorem lorem"
+                img={ContactUsSvg}
+                text="Jangan ragu untuk menghubungi kami dengan pertanyaan, konsultasi, atau untuk mendapatkan penawaran kustom. Tim ahli kami siap memberikan solusi dan dukungan terbaik untuk mewujudkan impian otomotif Anda."
+                label="Hubungi Kami untuk Konsultasi dan Penawaran Kustom"
+                title="Halaman Hubungi Kami"
+                onClick={() => navigate("/contact")}
               />
             </div>
           </div>
@@ -229,9 +239,7 @@ const Home = () => {
             <div className="max-w-8xl mx-auto py-10 px-12 sm:px-4">
               <div className="text-center">
                 <p className="text-xl">Testimoni</p>
-                <p className="text-4xl font-bold pt-6">
-                  Yang Mereka Fikirkan Tentang
-                </p>
+                <p className="text-4xl font-bold pt-6">Kata Mereka Tentang</p>
                 <p className="text-4xl font-bold">Produk Kami</p>
               </div>
               <div className="swiper-wrap mt-20">
@@ -262,7 +270,7 @@ const Home = () => {
           <div>
             <div className="px-12 max-w-8xl mx-auto py-14 sm:px-4">
               <div className="text-center pb-10">
-                <p className="text-sky-700 text-sm">FAQ's</p>
+                <p className="text-sky-700">FAQ's</p>
                 <p className="font-bold text-4xl">
                   Pertanyaan Yang Sering Ditanyakan
                 </p>
@@ -282,7 +290,9 @@ const Home = () => {
                   <p className="text-sm pb-4 text-white">
                     Jika Terdapat Pertanyaan Lebih Lanjut
                   </p>
-                  <p className="text-4xl font-bold text-white">Silahkan Hubungi Kami</p>
+                  <p className="text-4xl font-bold text-white">
+                    Silahkan Hubungi Kami
+                  </p>
                   <p className="pt-3 pb-6 text-white">
                     Kamu dapat menghubungi kami melalui beberapa cara
                   </p>

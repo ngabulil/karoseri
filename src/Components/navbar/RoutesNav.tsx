@@ -1,4 +1,6 @@
+import { FaSearch } from "react-icons/fa";
 import { NavLink } from "react-router-dom";
+import { openModal } from "../ModalProduct/ModalProduct";
 
 const RoutesNav = () => {
   return (
@@ -32,6 +34,9 @@ const RoutesNav = () => {
         >
           Hubungi Kami
         </NavLink>
+        <button onClick={() => openModal()}>
+          <FaSearch size={18} />
+        </button>
       </ul>
     </div>
   );

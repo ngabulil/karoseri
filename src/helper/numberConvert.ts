@@ -1,1 +1,1 @@
-export const toRupiah = (num: number) => `Rp. ${num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`
+export const toRupiah = (num: number = 0) => `Rp. ${num.toString().replace(/\B(?=(\d{3})+(?!\d))/g, ".")}`

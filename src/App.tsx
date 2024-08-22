@@ -30,7 +30,7 @@ const routes = [
         ],
       },
       { path: "produk", element: <Produk /> },
-      { path: "produk/detail/:id/:name", element: <DetailProduk /> },
+      { path: "produk/detail/:id", element: <DetailProduk /> },
       { path: "contact", element: <HubungiKami /> },
     ],
   },

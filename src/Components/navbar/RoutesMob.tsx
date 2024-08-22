@@ -1,7 +1,9 @@
 import React from "react";
 import { NavLink } from "react-router-dom";
 import { ImCross } from "react-icons/im";
-import { GiHamburgerMenu } from "react-icons/gi"
+import { GiHamburgerMenu } from "react-icons/gi";
+import { FaSearch } from "react-icons/fa";
+import { openModal } from "../ModalProduct/ModalProduct";
 const RoutesMob = () => {
   const [open, setOpen] = React.useState(false);
 
@@ -10,8 +12,11 @@ const RoutesMob = () => {
   };
   return (
     <div className="hidden sm:!block">
-      <div className="relative" onClick={handleOpen}>
-        <GiHamburgerMenu className="w-7 h-7 text-slate-700" />
+      <div className="relative flex gap-6">
+        <button onClick={() => openModal()}>
+          <FaSearch size={18} />
+        </button>
+        <GiHamburgerMenu onClick={handleOpen} className="w-7 h-7 text-slate-700" />
       </div>
       {open && (
         <div

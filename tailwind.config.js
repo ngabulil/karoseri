@@ -18,8 +18,21 @@ export default {
       }
     },
     screens: {
+      'min540-max767': {
+        'min': '540px',
+        'max': '767px'
+      },
+      'max540': {
+        'max': '540px'
+      },
+      'max580': {
+        'max': '580px'
+      },
       'max600': {
         'max': '600px'
+      },
+      'max700': {
+        'max': '700px'
       },
       'max1000': {
         'max': '1000px'

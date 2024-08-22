@@ -1,13 +1,13 @@
-import HeaderWrap from '../Components/produk/HeaderWrap'
-import Content from '../Components/produk/Content'
+import HeaderWrap from "../Components/produk/HeaderWrap";
+import Content from "../Components/produk/Content";
 
 const Produk = () => {
   return (
     <div>
-        <HeaderWrap />
-        <Content />
+      <HeaderWrap />
+      <Content />
     </div>
-  )
-}
+  );
+};
 
-export default Produk
+export default Produk;

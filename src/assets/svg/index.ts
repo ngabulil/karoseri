@@ -1,7 +1,21 @@
 import { ReactComponent as Cuaca } from "./cuaca.svg";
 import { ReactComponent as Visi } from "./visi.svg";
 import { ReactComponent as Misi } from "./misi.svg";
+import { ReactComponent as Experienced } from "./experienced.svg";
+import { ReactComponent as Personalized } from "./personalized.svg";
+import { ReactComponent as Customized } from "./customized.svg";
+import { ReactComponent as Trusted } from "./trusted.svg";
+import { ReactComponent as Cars } from "./cars.svg";
+import { ReactComponent as PerBusiness } from "./perusahaan-feature.svg";
+import { ReactComponent as ContactUs } from "./contactus.svg";
 
 export const CuacaSvg = Cuaca;
 export const VisiSvg = Visi;
 export const MisiSvg = Misi;
+export const ExperiencedSvg = Experienced;
+export const PersonalizedSvg = Personalized;
+export const CustomizedSvg = Customized;
+export const TrustedSvg = Trusted;
+export const CarsSvg = Cars;
+export const PerBusinessSvg = PerBusiness;
+export const ContactUsSvg = ContactUs;

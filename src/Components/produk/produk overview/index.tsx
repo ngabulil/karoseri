@@ -1,58 +1,59 @@
 import { Swiper, SwiperSlide } from "swiper/react";
 import { Autoplay, Pagination } from "swiper/modules";
 import { toRupiah } from "../../../helper/numberConvert";
-import { useNavigate } from "react-router-dom";
+import { Link, useNavigate } from "react-router-dom";
+import { UseProductContext } from "../../../Context/ProductContext";
+import { useEffect } from "react";
 
 const ProductOverview = () => {
-  const data = [
-    {
-      img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
-      title: "lorem jasdhk ashdasd",
-      type: "bus",
-      price: 15000,
-      id: 1,
-    },
-    {
-      img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
-      title: "lorem jasdhk ashdasd",
-      type: "bus",
-      price: 15000,
-      id: 1,
-    },
-    {
-      img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
-      title: "lorem jasdhk ashdasd",
-      type: "bus",
-      price: 15000,
-      id: 1,
-    },
-    {
-      img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
-      title: "lorem jasdhk ashdasd",
-      type: "bus",
-      price: 15000,
-      id: 1,
-    },
-    {
-      img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
-      title: "lorem jasdhk ashdasd",
-      type: "bus",
-      price: 15000,
-      id: 1,
-    },
-    {
-      img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
-      title: "lorem jasdhk ashdasd",
-      type: "bus",
-      price: 15000,
-      id: 1,
-    },
-  ];
-  const navigate = useNavigate();
-  const handleDetail = (id: number, name: string) => {
-    const validStr = name.replaceAll(" ", "-");
-    navigate(`/produk/detail/${id}/${validStr}`);
-  };
+  const { recomendedProducts: data, getRecommededProducts } = UseProductContext();
+  // const data = [
+  //   {
+  //     img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
+  //     title: "lorem jasdhk ashdasd",
+  //     type: "bus",
+  //     price: 15000,
+  //     id: 1,
+  //   },
+  //   {
+  //     img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
+  //     title: "lorem jasdhk ashdasd",
+  //     type: "bus",
+  //     price: 15000,
+  //     id: 1,
+  //   },
+  //   {
+  //     img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
+  //     title: "lorem jasdhk ashdasd",
+  //     type: "bus",
+  //     price: 15000,
+  //     id: 1,
+  //   },
+  //   {
+  //     img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
+  //     title: "lorem jasdhk ashdasd",
+  //     type: "bus",
+  //     price: 15000,
+  //     id: 1,
+  //   },
+  //   {
+  //     img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
+  //     title: "lorem jasdhk ashdasd",
+  //     type: "bus",
+  //     price: 15000,
+  //     id: 1,
+  //   },
+  //   {
+  //     img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
+  //     title: "lorem jasdhk ashdasd",
+  //     type: "bus",
+  //     price: 15000,
+  //     id: 1,
+  //   },
+  // ];
+  useEffect(() => {
+    getRecommededProducts();
+  }, [])
   return (
     <div className="bg-slate-200">
       <div className="px-12 py-6 max-w-8xl mx-auto relative flex flex-col sm:px-4 md:px-6">
@@ -61,31 +62,31 @@ const ProductOverview = () => {
         </p>
         <div className="flex gap-x-12 items-center sm:gap-y-6 sm:flex-col-reverse md:gap-y-6 md:flex-col-reverse">
           <div className="w-[60%] sm:w-full md:w-full">
-            <div className="grid grid-cols-2 gap-6 sm:gap-4">
-              {data.map(({ img, title, price, type, id }) => (
-                <div className="flex gap-x-4 items-center bg-white p-4 rounded-lg sm:flex-col">
-                  <div className="flex">
+            <div className="grid grid-cols-2 auto-rows-fr gap-6 sm:gap-8 sm:px-4 max500:!gap-4 max500:!px-0">
+              {data.map((item: any) => (
+                <div className="flex gap-x-4 items-center bg-white p-4 rounded-lg sm:flex-col sm:p-2">
+                  <div className="flex sm:mb-4 sm:w-full sm:h-full">
                     <img
-                      className="w-24 h-24 sm:w-full sm:h-full"
-                      src={img}
+                      className="w-24 h-24 sm:w-full sm:h-full sm:max-h-[180px]"
+                      src={item.img}
                       alt="asd"
                     />
                   </div>
-                  <div className="capitalize flex flex-col h-full sm:mr-auto">
-                    <p
+                  <div className="capitalize flex flex-col h-full sm:mr-auto sm:mt-auto sm:h-auto">
+                    <Link
+                      to={`/produk/detail/${item.id}`}
                       className="font-bold text-lg cursor-pointer"
-                      onClick={() => handleDetail(id, title)}
                     >
-                      {title}
-                    </p>
-                    <p>{type}</p>
-                    <p className="mt-auto">{toRupiah(price)}</p>
+                      {item.name}
+                    </Link>
+                    <p>{item.type}</p>
+                    <p className="">{toRupiah(item.price)}</p>
                   </div>
                 </div>
               ))}
             </div>
           </div>
-          <div className="flex w-[40%] min-h-[500px] h-full sm:w-full sm:min-h-[300px] md:w-full md:min-h-[400px]">
+          <div className="w-[40%] h-full sm:w-full sm:min-h-[300px] md:w-full md:min-h-[400px]">
             <Swiper
               spaceBetween={30}
               centeredSlides={true}
@@ -99,7 +100,7 @@ const ProductOverview = () => {
               modules={[Autoplay, Pagination]}
               className=""
             >
-              {data?.map(({ img }) => (
+              {data?.map(({ img }: any) => (
                 <SwiperSlide
                   style={{
                     display: "flex",
@@ -107,7 +108,7 @@ const ProductOverview = () => {
                     alignItems: "center",
                   }}
                 >
-                  <img className="m-auto max-w-[400px]" src={img} alt="" />
+                  <img className="m-auto w-full h-[400px] max-w-[400px] rounded-md" src={img} alt="" />
                 </SwiperSlide>
               ))}
             </Swiper>
