@@ -29,7 +29,7 @@ const ProductProvider: React.FC<ProductContextProps> = ({ children }) => {
   const getRecommededProducts = async (id? : any) => {
       setLoading(true);
       try {
-        const data = await getAllMobil({ limit: 4, id });
+        const data = await getAllMobil({ limit: 6, id });
         setRecomendedProducts(data.data.map((item: any) => ({
           ...item,
           img: item.images[0],

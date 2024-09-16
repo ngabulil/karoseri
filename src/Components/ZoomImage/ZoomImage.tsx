@@ -14,7 +14,7 @@ const ZoomImage: React.FC<ZoomImageProps> = ({ img, children }) => {
   const modalContent = (
     <div
       onClick={() => setZoom(false)}
-      className="fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center z-10"
+      className="fixed top-0 left-0 w-screen h-screen bg-black flex items-center justify-center z-10 cursor-zoom-out"
     >
       {/* <div onClick={(e) => e.stopPropagation()} className="relative">
         <div className="absolute top-0 left-0 w-full h-full bg-black opacity-30 z-10">
@@ -30,7 +30,7 @@ const ZoomImage: React.FC<ZoomImageProps> = ({ img, children }) => {
 
   return (
     <div>
-      <div onClick={() => setZoom(true)}>{children}</div>
+      <div className="cursor-zoom-in" onClick={() => setZoom(true)}>{children}</div>
       {zoom && ReactDOM.createPortal(modalContent, document.body)}
     </div>
   );

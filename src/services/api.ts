@@ -32,7 +32,6 @@ const refreshToken = async () => {
     const response = await axios.put(`${baseUrl}/refresh-token`, {
       refreshToken: token,
     });
-    console.log(response.data.data.access_token);
     setAccessToken(response.data.data.access_token);
   } catch (error: any) {
     console.log(error.response.data.status);

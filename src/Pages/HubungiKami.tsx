@@ -16,19 +16,18 @@ const HubungiKami = () => {
               Contact
             </p>
             <h2 className="font-heading mb-4 font-bold tracking-tight text-white text-3xl">
-              Get in Touch
+              Hubungi Kami
             </h2>
             <p className="mx-auto mt-4 max-w-3xl text-xl text-white">
-              In hac habitasse platea dictumst
+              Jangan Ragu Untuk Menghubungi Kami
             </p>
           </div>
         </div>
         <div className="max-w-8xl mx-auto px-12">
           <h2 className="text-3xl font-bold text-center mb-6">Kontak Kami</h2>
           <p className="text-center mb-4 max-w-[1000px] mx-auto">
-            Lorem ipsum, dolor sit amet consectetur adipisicing elit.
-            Dignissimos id ducimus voluptate ratione quam explicabo nam at
-            inventore vitae officia.
+            Ada pertanyaan atau butuh bantuan? Berikut beberapa kontak yang kami
+            sediakan untuk dihubungi. Kami siap membantu Anda!
           </p>
           <div className="flex flex-wrap gap-8 pb-8 px-8 justify-center">
             <div className="flex flex-col w-[300px] border-2 border-solid rounded-xl drop-shadow-md shadow-md p-6 bg-gradient-to-r-green-teal">
@@ -127,17 +126,42 @@ const HubungiKami = () => {
                   onChange={(e) => setDescription(e.target.value)}
                 ></textarea>
               </div>
-              <a
-                href={`mailto:info@karoseri.co.id${
-                  subject ? `?subject=${encodeURIComponent(subject)}%20From%20${name}` : ""
-                }${
-                  description ? `&body=${encodeURIComponent(description)}` : ""
-                }`}
-                className="bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 transition duration-300"
-                target="_blank"
-              >
-                Kirim Email
-              </a>
+              <div className="flex gap-2">
+                <a
+                  href={`mailto:info@karoseri.co.id${
+                    subject
+                      ? `?subject=${encodeURIComponent(
+                          subject
+                        )}%20From%20${name}`
+                      : ""
+                  }${
+                    description
+                      ? `&body=${encodeURIComponent(description)}`
+                      : ""
+                  }`}
+                  className="bg-indigo-500 text-white py-2 px-4 rounded-md hover:bg-indigo-600 transition duration-300"
+                  target="_blank"
+                >
+                  Kirim Email
+                </a>
+                <a
+                  href={`https://wa.me/6282211022160?text=${
+                    subject
+                      ? `Subjek:%20${encodeURIComponent(
+                          subject
+                        )}%0ADari:%20${name}`
+                      : ""
+                  }${
+                    description
+                      ? `%0A%0A${encodeURIComponent(description)}`
+                      : ""
+                  }`}
+                  className="bg-green-500 text-white py-2 px-4 rounded-md hover:bg-green-600 transition duration-300"
+                  target="_blank"
+                >
+                  Kirim WhatsApp
+                </a>
+              </div>
             </form>
           </div>
         </div>

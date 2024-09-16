@@ -66,52 +66,48 @@ const Struktur = () => {
             position: "Produksi",
           },
           {
-            name: "Kayat",
-            position: "Produksi",
-          },
-          {
-            name: "Kayat",
+            name: "Sulis",
             position: "Produksi",
           },
         ],
       },
       {
         level: 4,
-        name: "TARJAK 2",
+        name: "Septian Eko",
         position: "Staf Produksi",
         before: true,
         after: true,
         children: [
           {
-            name: "Kayat",
+            name: "Didin",
             position: "Produksi",
           },
           {
-            name: "Kayat",
+            name: "Vicky Gunawan",
             position: "Produksi",
           },
           {
-            name: "Kayat",
+            name: "Yoko",
             position: "Produksi",
           },
         ],
       },
       {
         level: 4,
-        name: "TARJAK",
-        position: "Staf Produksi",
+        name: "M. Ghofur",
+        position: "QC",
         before: true,
         children: [
           {
-            name: "Kayat",
+            name: "Mamo",
             position: "Produksi",
           },
           {
-            name: "Kayat",
+            name: "Suparto",
             position: "Produksi",
           },
           {
-            name: "Kayat",
+            name: "Bintang",
             position: "Produksi",
           },
         ],
@@ -164,7 +160,7 @@ const Struktur = () => {
                       <div>{v.position}</div>
                     </div>
                     {v.children && (
-                      <div className="mt-8 border-2 bg-slate-200 rounded-lg border-solid border-black max-w-[250px] mx-auto before:content-[''] before:absolute before:top-[50%] before:translate-y-[-50%] before:left-[50%] before:translate-x-[-50%] before:h-full before:w-[1px] before:bg-black max1000:max-w-[200px]">
+                      <div className="mt-8 border-2 bg-slate-200 rounded-lg border-solid border-black max-w-[250px] mx-auto before:content-[''] before:absolute before:top-[50%] before:translate-y-[-50%] before:left-[50%] before:translate-x-[-50%] before:h-[58%] before:w-[1px] before:bg-black max1000:max-w-[200px]">
                         {v.children?.map((child, i, arr) => (
                           <div
                             className={`w-full text-center ${

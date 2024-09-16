@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import { toRupiah } from "../../../helper/numberConvert";
-// import ButtonPrimary from "../../button/ButtonPrimary";
 
 interface ItemProductProps {
   data: produk;
@@ -31,11 +30,6 @@ const ItemProduct: React.FC<ItemProductProps> = ({ data }) => {
         <div>
           <p>{data.short}</p>
         </div>
-        {/* <ButtonPrimary
-          click={() => handleDetail(data.id)}
-          title="Lihat Detail"
-          moreStyle="mt-auto pt-3"
-        /> */}
       </div>
     </div>
   );

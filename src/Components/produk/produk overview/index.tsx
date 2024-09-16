@@ -7,50 +7,6 @@ import { useEffect } from "react";
 
 const ProductOverview = () => {
   const { recomendedProducts: data, getRecommededProducts } = UseProductContext();
-  // const data = [
-  //   {
-  //     img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
-  //     title: "lorem jasdhk ashdasd",
-  //     type: "bus",
-  //     price: 15000,
-  //     id: 1,
-  //   },
-  //   {
-  //     img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
-  //     title: "lorem jasdhk ashdasd",
-  //     type: "bus",
-  //     price: 15000,
-  //     id: 1,
-  //   },
-  //   {
-  //     img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
-  //     title: "lorem jasdhk ashdasd",
-  //     type: "bus",
-  //     price: 15000,
-  //     id: 1,
-  //   },
-  //   {
-  //     img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
-  //     title: "lorem jasdhk ashdasd",
-  //     type: "bus",
-  //     price: 15000,
-  //     id: 1,
-  //   },
-  //   {
-  //     img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
-  //     title: "lorem jasdhk ashdasd",
-  //     type: "bus",
-  //     price: 15000,
-  //     id: 1,
-  //   },
-  //   {
-  //     img: "https://d1csarkz8obe9u.cloudfront.net/posterpreviews/vector-cartoon-car-illustration-for-t-shirt-design-template-67a147fc9890aa93ece86a9af6597173_screen.jpg?ts=1681024996",
-  //     title: "lorem jasdhk ashdasd",
-  //     type: "bus",
-  //     price: 15000,
-  //     id: 1,
-  //   },
-  // ];
   useEffect(() => {
     getRecommededProducts();
   }, [])
@@ -62,7 +18,7 @@ const ProductOverview = () => {
         </p>
         <div className="flex gap-x-12 items-center sm:gap-y-6 sm:flex-col-reverse md:gap-y-6 md:flex-col-reverse">
           <div className="w-[60%] sm:w-full md:w-full">
-            <div className="grid grid-cols-2 auto-rows-fr gap-6 sm:gap-8 sm:px-4 max500:!gap-4 max500:!px-0">
+            <div className="grid grid-cols-2 auto-rows-fr gap-6 sm:gap-8 sm:px-4 max500:!gap-2 max500:!px-0">
               {data.map((item: any) => (
                 <div className="flex gap-x-4 items-center bg-white p-4 rounded-lg sm:flex-col sm:p-2">
                   <div className="flex sm:mb-4 sm:w-full sm:h-full">

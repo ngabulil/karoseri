@@ -6,7 +6,6 @@ import { useEffect, useRef } from "react";
 import {  useParams } from "react-router-dom";
 import Table from "../Components/detail/table/Table";
 import { UseDetailContext } from "../Context/DetailContext";
-import { UseProductContext } from "../Context/ProductContext";
 import { FaQuestionCircle } from "react-icons/fa";
 import ModalMessage from "../Components/ModalMessage/ModalMessage";
 import ZoomImage from "../Components/ZoomImage/ZoomImage";
@@ -14,44 +13,10 @@ import ZoomImage from "../Components/ZoomImage/ZoomImage";
 const DetailProduk = () => {
   const ref = useRef<HTMLDivElement>(null);
   const { detail: dataDetail, getDetail, isVisible, setIsVisible } = UseDetailContext();
-  const { recomendedProducts, getRecommededProducts } = UseProductContext();
   const { id } = useParams<{ id: string }>();
-  // const dataDetail = {
-  //   name: "Mobil Ambulance X Jaguar Limited Edition",
-  //   short: "Lore ipsum asdhkuhasd khasjhd kjhaksjdh ashdg asjhdkasd",
-  //   description: `Lore ipsum asdhkuhasd asdasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh sdadas asdasd Lore ipsum asdhkuhasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh Lore ipsum asdhkuhasd khasjhd kjhaksjdh
-
-  //     kahskdjhkajshdjalsdj`,
-  //   type: "Van",
-  //   price: 15000000,
-  //   images: [
-  //     "https://st4.depositphotos.com/28548270/31222/v/1600/depositphotos_312226896-stock-illustration-car-vector-illustration-black-only.jpg",
-  //     "https://st4.depositphotos.com/28548270/31222/v/1600/depositphotos_312226896-stock-illustration-car-vector-illustration-black-only.jpg",
-  //     "https://st4.depositphotos.com/28548270/31222/v/1600/depositphotos_312226896-stock-illustration-car-vector-illustration-black-only.jpg",
-  //   ],
-  // };
-  // const navigate = useNavigate();
-  // useEffect(() => {
-  //   const handleScrollToTop = () => {
-  //     window.scrollTo(0, 0);
-  //   };
-  //   handleScrollToTop();
-
-  //   window.addEventListener("beforeunload", handleScrollToTop);
-
-  //   // return () => {
-  //   //   window.removeEventListener('beforeunload', handleScrollToTop);
-  //   // };
-  // }, [navigate]);
-
-  // useEffect(() => {
-  //   if (ref.current) {
-  //     ref.current.scrollIntoView({ behavior: "smooth" });
-  //   }
-  // }, [navigate]);
+  
   useEffect(() => {
     getDetail(id);
-    getRecommededProducts();
   }, [id]);
   return (
     <div className="bg-slate-100 py-4 px-12 sm:px-2" ref={ref}>
@@ -138,7 +103,7 @@ const DetailProduk = () => {
           </div>
         </div>
         <ListProduct
-          data={recomendedProducts}
+          data={dataDetail?.recommendedMobil || []}
           label="Jelajahi Pilihan Luar Biasa Kami!"
           title="Produk Lainnya"
         />

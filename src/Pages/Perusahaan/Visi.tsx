@@ -1,8 +1,20 @@
 import { VisiSvg, MisiSvg } from "../../assets/svg"
 
 const Visi = () => {
-    console.log("ini visi")
-    const datavisi = ["lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum", "lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum lorem ipsum"]
+  const visi = [
+    "Menjadi Pemimpin Nasional: Menjadi penyedia solusi karoseri mobil terdepan di Indonesia.",
+    "Inovasi Terdepan: Menghadirkan desain dan teknologi karoseri yang paling inovatif di pasar lokal.",
+    "Kualitas Terbaik: Menyediakan produk dengan standar kualitas tertinggi yang diakui di seluruh negeri.",
+    "Kepuasan Pelanggan: Menyediakan pengalaman pelanggan yang luar biasa dengan layanan yang responsif dan dukungan yang memadai."
+  ];
+  
+  const misi = [
+    "Inovasi Berkelanjutan: Mengembangkan solusi karoseri yang inovatif sesuai dengan kebutuhan pasar Indonesia.",
+    "Kualitas Unggul: Menjamin setiap produk memenuhi standar kualitas tertinggi dan menggunakan bahan berkualitas.",
+    "Layanan Pelanggan Prima: Memberikan layanan pelanggan yang cepat, efektif, dan dukungan teknis yang memuaskan.",
+    "Keberlanjutan: Mengadopsi praktik ramah lingkungan dalam proses produksi dan operasional untuk mendukung keberlanjutan.",
+    "Kemitraan Jangka Panjang: Membangun hubungan yang kuat dan saling menguntungkan dengan pelanggan dan pemasok di seluruh Indonesia."
+  ];
   return (
     <div>
       <div className="max-w-8xl mx-auto px-12 mb-8 sm:px-4">
@@ -17,7 +29,7 @@ const Visi = () => {
             </div>
             <div className="text-justify ml-[20px]">
               <ul className="list-disc flex flex-col gap-4">
-                {datavisi.map((item) => (
+                {visi.map((item) => (
                   <li className="marker:text-xl">{item}</li>
                 ))}
               </ul>
@@ -32,7 +44,7 @@ const Visi = () => {
             </div>
             <div className="text-justify ml-[20px]">
               <ul className="list-disc flex flex-col gap-4">
-                {datavisi.map((item) => (
+                {misi.map((item) => (
                   <li className="marker:text-xl">{item}</li>
                 ))}
               </ul>

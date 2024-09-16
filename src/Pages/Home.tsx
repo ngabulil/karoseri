@@ -14,7 +14,7 @@ import faqIcon from "../assets/faq-icon.svg";
 import WAme from "../assets/wa.png";
 import phone from "../assets/phone.png";
 import email from "../assets/email.png";
-import setCar from "../assets/517.jpg";
+import setCar from "../assets/image-produk.webp";
 import { arrToArr } from "../helper/arrToArr";
 import useWindowSize from "../hooks/useWindowSize";
 import {
@@ -65,7 +65,7 @@ const Home = () => {
             </p>
             <div className="sm:!flex sm:justify-center sm:flex-wrap sm:w-full hidden">
               <img
-                className="min-w-[280px] max-w-[480px] w-full"
+                className="min-w-[280px] max-w-[480px] w-full rounded-md"
                 src={setCar}
                 alt=""
               />
@@ -83,7 +83,7 @@ const Home = () => {
             </div>
           </div>
           <div className="flex justify-center w-1/2 sm:hidden">
-            <img className="h-96 ml-auto" src={setCar} alt="" />
+            <img className="h-96 w-[550px] ml-auto rounded-md" src={setCar} alt="" />
           </div>
         </div>
       </section>

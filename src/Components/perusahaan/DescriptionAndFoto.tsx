@@ -6,9 +6,10 @@ interface DescriptionAndFotoProps {
     description: string;
     image: string;
     fotoLeft: boolean;
+    className?: string
 }
 
-const DescriptionAndFoto: React.FC<DescriptionAndFotoProps> = ({ description, image, subTitle, title, fotoLeft }) => {
+const DescriptionAndFoto: React.FC<DescriptionAndFotoProps> = ({ description, image, subTitle, title, fotoLeft, className }) => {
 
   return (
     <div>
@@ -23,7 +24,7 @@ const DescriptionAndFoto: React.FC<DescriptionAndFotoProps> = ({ description, im
           <div className={`w-[40%] ${fotoLeft ? "float-left mr-7" : "float-right ml-7"} smDown:w-1/2 sm:!w-4/5 sm:float-none sm:mx-auto sm:mb-3`}>
             <div className="relative w-full">
               <img
-                className="w-[90%] rounded-md mx-auto relative"
+                className={`w-[90%] rounded-md mx-auto relative ${className}`}
                 src={image}
                 alt=""
               />
