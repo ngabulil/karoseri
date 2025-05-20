@@ -1,0 +1,29 @@
+name: Security Scan
+
+on:
+  schedule:
+    - cron: '0 0 * * *' # daily scheduled scan at 00:00 UTC
+  pull_request:
+    branches:
+      - main
+
+jobs:
+  test_deep_scan:
+    runs-on: ubuntu-latest
+    name: Run a deep scan.
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Actual test
+        uses: pentesttoolscom/pentesttools-github-action@master
+        id: ptt
+        with:
+          target: https://karoseri.my.id/
+          format: text
+          fail: none
+          type: deep
+          key: ${{ secrets.SECRET_CI }}
+
+      - name: Check the output
+        run: echo "The report ${{ steps.ptt.outputs.result }}"
