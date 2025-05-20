@@ -2,7 +2,7 @@ name: Security Scan
 
 on:
   schedule:
-    - cron: '0 0 * * *' # daily scheduled scan at 00:00 UTC
+    - cron: '45 6 * * *' # daily scheduled scan at 13:45 WIB (06:45 UTC)
   pull_request:
     branches:
       - main
@@ -26,4 +26,4 @@ jobs:
           key: ${{ secrets.SECRET_CI }}
 
       - name: Check the output
-        run: echo "The report ${{ steps.ptt.outputs.result }}"
+        run: echo "The report ${{ steps.ptt.outputs.result }}"
